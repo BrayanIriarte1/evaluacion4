@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useSate} from "react";
+import {Routes, Route,Link} from "react-router-dom";
+import Inicio from './components/navegacion/Inicio'
+import LeagueOfLegends from "./components/LeagueOfLegends";
+import Valorant from "./components/Valorant";
+import Factorial from "./components/Factorial"
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Inicio/>}/>
+        <Route path="/LeagueOfLegends" element={<LeagueOfLegends/>}/>
+        <Route path="/Valorant" element={<Valorant/>}/>
+        <Route path="/Factorial" element={<Factorial/>}/>
+      </Routes>
     </div>
-  );
+    
+  )
 }
 
 export default App;
